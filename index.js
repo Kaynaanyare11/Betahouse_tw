@@ -45,6 +45,10 @@ app.use('/users',users)
 app.use('/gellary',gelley)
 app.use('/contact',conatacts)
 app.use('/about',about)
+
+app.get('/',  (req,res)=>{
+res.send('stared')
+})
 app.listen(2000,async()=>{
     console.log('server started at port 5000')
 })
