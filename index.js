@@ -29,7 +29,7 @@ const guryaharout=require('./Routers/guryaharoute')
 const imgesroute=require('./Routers/sawir_route')
 const users=require('./Routers/user_Route')
 
-app.use('/guryaharout',guryaharout);
+
 const loginroute=require('./Routers/loginRoute');
 const xogtashirkada=require('./Routers/shirkadaRoute')
 const service=require('./Routers/serviceroutes')
@@ -37,6 +37,7 @@ const cleints=require('./Routers/clentRout')
 const gelley=require('./Routers/gellaryroute')
 const conatacts=require('./Routers/contactRouter')
 const about=require('./Routers/Aboutroutes')
+app.use('/guryaharout',guryaharout);
 app.use('/shirkada',xogtashirkada)
 app.use('/login',loginroute)
 app.use('/imgesroute',imgesroute)
