@@ -21,9 +21,11 @@ DB_CON();
 // CONNECCT()
 
 
-app.use(cors());
+app.use(cors({
+    origin: 'https://betahouseapi.vercel.app','http://localhost:5173'}));
 
 app.use(express.json());
+
 const guryaharout=require('./Routers/guryaharoute')
 //app.use('/guryaharouter',guryaharouter)
 const imgesroute=require('./Routers/sawir_route')
@@ -37,6 +39,7 @@ const cleints=require('./Routers/clentRout')
 const gelley=require('./Routers/gellaryroute')
 const conatacts=require('./Routers/contactRouter')
 const about=require('./Routers/Aboutroutes')
+
 app.use('/guryaharout',guryaharout);
 app.use('/shirkada',xogtashirkada)
 app.use('/login',loginroute)
