@@ -22,6 +22,7 @@ DB_CON();
 
 
 app.use(cors());
+
 app.use(express.json());
 const guryaharout=require('./Routers/guryaharoute')
 //app.use('/guryaharouter',guryaharouter)
