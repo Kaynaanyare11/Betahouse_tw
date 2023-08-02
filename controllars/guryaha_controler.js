@@ -44,7 +44,7 @@ const Housemodel=require('../models/housemodel')
             pathrooms:joi.string().required(),
             masterRooms:joi.string().required(),
             description:joi.string().required(),
-            user_id:joi.string().required()
+            user_id:joi.string()
         })
         return HOUSE.validate(housevalidation)
     }
