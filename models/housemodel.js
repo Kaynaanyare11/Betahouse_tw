@@ -60,7 +60,7 @@ const houseSchema= new moongoose.Schema({
     
     user_id:{
         type:mongoose.Types.ObjectId,
-        required:true,
+        // required:true,
         ref:"users"
     }
 
