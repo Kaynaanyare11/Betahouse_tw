@@ -21,8 +21,7 @@ DB_CON();
 // CONNECCT()
 
 
-app.use(cors({
-    origin: 'https://betahouseapi.vercel.app','http://localhost:5173'}));
+app.use(cors({origin : ['https://ruwabetahouse.vercel.app','http://localhost:5173']}));
 
 app.use(express.json());
 
