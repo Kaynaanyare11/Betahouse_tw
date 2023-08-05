@@ -37,7 +37,7 @@ const posts=async(req,res)=>{
     if(err) 
        return   res.status(400).send(err.message)
 
-        const getaboutes=await aboutmmodel.find().sort({_id: -1}).limit(1)
+        const getaboutes=await aboutmmodel.find().sort({"_id": -1}).limit(1)
         if(getaboutes.length>0){
             const updates= await aboutmmodel.findByIdAndUpdate(getaboutes[0]._id,{
                
