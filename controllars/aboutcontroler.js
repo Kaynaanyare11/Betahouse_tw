@@ -4,7 +4,7 @@ const joi=require('joi')
 //new update for about
 const getaboutus=async(req,res)=>{
     try {
-       const getall=await aboutmmodel.find().sort({_id: -1}).limit(1);
+       const getall=await aboutmmodel.find().sort({'_id': -1}).limit(1);
        res.status(200).send(getall) 
     } catch (error) {
         res.status(400).send(error.message)
@@ -44,7 +44,7 @@ const posts=async(req,res)=>{
                 full_descrip:req.body.full_descrip,
                 description:req.body.description
             },{new:true})
-            res.status(200).send({updates})
+            res.status(200).send({message:'success fuly updated',updates})
         }
         else{
            
