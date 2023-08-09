@@ -31,21 +31,24 @@ const guryaharout=require('./Routers/guryaharoute')
 //app.use('/guryaharouter',guryaharouter)
 const imgesroute=require('./Routers/sawir_route')
 const users=require('./Routers/user_Route')
+const logrout=require('./Routers/MyloginRoutes')
 
-
-const loginroute=require('./Routers/loginRoute');
+//const loginroute=require('./Routers/loginRoute');
 const xogtashirkada=require('./Routers/shirkadaRoute')
 const service=require('./Routers/serviceroutes')
 const cleints=require('./Routers/clentRout')
 const gelley=require('./Routers/gellaryroute')
 const conatacts=require('./Routers/contactRouter')
 const about=require('./Routers/Aboutroutes')
+const Authentications=require('./Routers/Authenticationmiddleware')
+app.use('/login',logrout)
 
 app.use('/guryaha',guryaharout);
-app.use('/shirkada',xogtashirkada)
-app.use('/login',loginroute)
+app.use('/shirkada',Authentications(),xogtashirkada)
+// app.use('/login',loginroute)
 app.use('/imgesroute',imgesroute)
-app.use('/users',users)
+
+app.use('/users',Authentications(['admin','CustamerCare']),users)
  app.use('/service',service)
  app.use('/clients',cleints)
 app.use('/gellary',gelley)

@@ -1,7 +1,8 @@
 const express=require('express')
 const xogtashirkada=express.Router();
 const {GET,GETONE,POST,deletes}=require('../controllars/xogta_herosectioncontroler')
-xogtashirkada.get('/',GET)
+//const Authentications=require('./Authenticationmiddleware')
+xogtashirkada.get('/',GET,)
 xogtashirkada.get('/:id',GETONE)
 
 xogtashirkada.post('/',POST)

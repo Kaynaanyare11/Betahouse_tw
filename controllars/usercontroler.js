@@ -1,6 +1,6 @@
 const usermodel=require('../models/usermodel');
 const joi=require('joi')
-
+const bcrypt=require('bcrypt')
 //get all users
 const Getusers=async(req,res)=>{
   try {
@@ -33,18 +33,28 @@ const uservalidation=(userval)=>{
 }
 //post
 const useradd=async(req,res)=>{
-    const{error}=uservalidation(req.body)
-    if(error){
-        res.json(error.message)
-    }
+
+    
+      // const
     try {
+      //validations
+      const{error}=uservalidation(req.body)
+      if(error)
+        return  res.status(405).send(error.message)
+
        const userad= new usermodel(req.body)
+       userad.password =await bcrypt.hash(userad.password,10)
+//if user hore ujiray
+const alluser=await usermodel.find({email:req.body.email});
+if(alluser.length>0) return res.status(409).send({status:false,message:'this user allready exsist'}
+)
        await userad.save()
-       res.status(200).send({message:'successfuly posted',users:userad})
+       res.status(200).send({status:true,message:'successfuly posted',users:userad})
     } catch (error) {
         res.status(400).send(error.message)
     }
 }
+
 ///update
 const useredit= async(req,res)=>{
   try {
