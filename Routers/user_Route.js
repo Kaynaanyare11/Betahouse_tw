@@ -3,7 +3,8 @@ const express=require('express');
 const users=express.Router();
 const {Getusers,Getoneuser,useradd,useredit,userdelete}=require('../controllars/usercontroler');
 const Authentications=require('./Authenticationmiddleware')
-users.get('/',Authentications(['admin']),Getusers)
+//Authentications(['admin'])
+users.get('/',Getusers)
 users.get('/:id',Getoneuser)
 
 users.post('/',Authentications(["CustamerCare"]),useradd)
