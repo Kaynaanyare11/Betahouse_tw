@@ -44,7 +44,7 @@ const Authentications=require('./Routers/Authenticationmiddleware')
 app.use('/login',logrout)
 
 app.use('/guryaha',guryaharout);
-app.use('/shirkada',Authentications(),xogtashirkada)
+app.use('/shirkada',xogtashirkada)
 // app.use('/login',loginroute)
 app.use('/imgesroute',imgesroute)
 
