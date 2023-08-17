@@ -24,7 +24,8 @@ const Mylogin=async(req,res)=>{
      if(!chechpass) return res.status(400).send({err:'in valid password'})
      const token= jwt.sign({
          email:user.email,
-         id:user._id
+         id:user._id,
+         rule:user.role
      },process.env.SECRET_KEY,{expiresIn:'1h'})
      return res.status(200).send({Accestoken:token,login:true})
     
