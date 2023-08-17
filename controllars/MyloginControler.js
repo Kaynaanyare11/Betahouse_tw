@@ -25,7 +25,7 @@ const Mylogin=async(req,res)=>{
      const token= jwt.sign({
          email:user.email,
          id:user._id,
-         rule:user.role
+         role:user.role
      },process.env.SECRET_KEY,{expiresIn:'1h'})
      return res.status(200).send({Accestoken:token,login:true})
     
