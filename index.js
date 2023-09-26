@@ -24,7 +24,7 @@ DB_CON();
 // app.use(cors({origin : ['https://ruwabetahouse.vercel.app','http://localhost:5173']}));
 
  app.use(cors())
-
+//this test connection github
 app.use(express.json());
 
 const guryaharout=require('./Routers/guryaharoute')
