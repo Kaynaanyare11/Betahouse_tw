@@ -52,14 +52,19 @@ const POST=async(req,res)=>{
          res.status(400).send(error.message)   
         }
     }
+
     //delete
+
     const deletes=async(req,res)=>{
         try {
            const{id}=req.params;
            const deltes= await cleintsmodel.findByIdAndDelete(id)
+        //    await deletes.save()
            res.status(200).send({status:'succesfuly deleted', DELETHOUSE:deltes}) 
+         
         } catch (error) {
             res.status(400).send(error.message)
         }
     }
+
     module.exports={getones,getservice,POST,update,deletes}
