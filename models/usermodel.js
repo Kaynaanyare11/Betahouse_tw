@@ -20,8 +20,8 @@ const userSchema= new mongoose.Schema({
     },
     role:{
         type:String,
-    default:"superadmin",
-        enum:["superadmin","admin","user"]
+    default:"admin",
+        enum:["superadmin","CustamerCare","user"]
     }
 })
 const usermodel= mongoose.model("users",userSchema)
